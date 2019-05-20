@@ -1,6 +1,5 @@
 <?php
     session_start();
-    echo "Homepage";
     require_once 'login.php';
 
     $conn = new mysqli($hn, $un, $pw, $db);
