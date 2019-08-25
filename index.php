@@ -1,5 +1,5 @@
 <?php
-	require "hw5.php";
+	require "homepage.php";
 
 ?>
 <main>

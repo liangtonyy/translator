@@ -2,5 +2,5 @@
 	session_start();
 	session_unset();
 	session_destroy();
-	header("Location: ../hw5.php");
+	header("Location: ../homepage.php");
 ?>

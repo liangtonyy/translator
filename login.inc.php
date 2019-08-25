@@ -14,7 +14,7 @@
 		$password = $_POST['pwd'];
 
 		if(empty($mailuid) || empty($password)){
-			header("Location: ../hw5.php?error=emptyfields");
+			header("Location: ../homepage.php?error=emptyfields");
 			exit();
 		}
 		else{
@@ -23,7 +23,7 @@
 			$sql = "SELECT * FROM userCred WHERE uidUsers=? OR emailUsers=?;";
 			$stmt = mysqli_stmt_init($conn);
 			if(!mysqli_stmt_prepare($stmt,$sql)){ 
-				header("Location: ../hw5.php?error=sqlerror");
+				header("Location: ../homepage.php?error=sqlerror");
 				exit();
 			}
 			else{
@@ -33,7 +33,7 @@
 				if($row = mysqli_fetch_assoc($result)){
 					$pwdCheck = password_verify($password,$row['pwdUsers']);
 					if($pwdCheck == false){
-						header("Location: ../hw5.php?error=wrongpwd");
+						header("Location: ../homepage.php?error=wrongpwd");
 						
 						exit();
 					}
@@ -46,19 +46,19 @@
 						exit();
 					}
 					else{
-						header("Location: ../hw5.php?error=wrongpwd");
+						header("Location: ../homepage.php?error=wrongpwd");
 						exit();
 
 					}
 				}
 				else{
-					header("Location: ../hw5.php?error=nosuser");
+					header("Location: ../homepage.php?error=nosuser");
 				}
 			}
 		}
 	}
 	else{
-		header("Location: ../hw5.php");
+		header("Location: ../homepage.php");
 		exit();
 	}	
 

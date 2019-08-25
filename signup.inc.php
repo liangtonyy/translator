@@ -54,7 +54,7 @@
 	    				$hashedPwd = password_hash($password,PASSWORD_DEFAULT);
 	    				mysqli_stmt_bind_param($stmt, "sss",$username, $email, $hashedPwd);
 	    				mysqli_stmt_execute($stmt);
-	    				header("Location: ../hw5.php");
+	    				header("Location: ../homepage.php");
 	    				
 	    				exit();
 	    			}
